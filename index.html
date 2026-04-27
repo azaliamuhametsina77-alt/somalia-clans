@@ -29,7 +29,7 @@
       position:absolute; display:none; z-index:10; pointer-events:none; max-width:315px;
       background:rgba(255,255,255,.96); border:1px solid rgba(0,0,0,.08); border-radius:14px;
       box-shadow:0 12px 35px rgba(0,0,0,.16); padding:14px 15px; color:#202020;
-      font-size:13px; line-height:1.38;
+      font-size:14px; line-height:1.38;
     }
     .tooltip .region { font-size:15px; font-weight:700; margin-bottom:7px; }
     .tooltip .row { margin:5px 0; }
@@ -38,7 +38,7 @@
     .tooltip li { margin:3px 0; }
     .legend {
       display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:center;
-      font-size:12px; color:#333; padding:8px 10px 0; background:transparent;
+      font-size:16px; color:#333; padding:8px 10px 0; background:transparent;
     }
     .legend-title { width:100%; text-align:center; font-weight:600; margin-bottom:2px; }
     .leg-item { display:flex; align-items:center; gap:6px; }
@@ -49,7 +49,7 @@
       max-width: 760px;
       text-align: center;
       font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 10.5px;
+      font-size: 14px;
       line-height: 1.45;
       color: #666;
       padding: 0 14px 10px;
@@ -397,7 +397,7 @@ const tooltip = document.getElementById('tooltip');
 function tooltipHTML(name, ruName) {
   const info = regionInfo[name] || {main:'нет данных', mainKey:'No data', also:[], note:''};
   if (!info || info.mainKey === 'No data' || String(info.main || '').toLowerCase() === 'нет данных') {
-    return `<div class="region">${ruName || name}</div><div class="row">Нет данных.</div>`;
+    return `<div class="region">${ruName || name}</div><div class="row">Нет данных</div>`;
   }
   const also = info.also && info.also.length ? `<div class="row"><span class="k">Также представлены:</span><ul>${info.also.map(x=>`<li>${x}</li>`).join('')}</ul></div>` : '';
   const note = info.note ? `<div class="row">${info.note}</div>` : '';
